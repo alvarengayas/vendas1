@@ -1,0 +1,314 @@
+@import url("styles/header.css");
+@import url("styles/banner.css");
+@import url("styles/carrossel.css");
+@import url("styles/topicos.css");
+@import url("styles/contato.css");
+@import url("styles/rodapé.css");
+
+/* Definindo as variáveis de cores e tipografia */
+:root {
+    --cor-de-fundo: #EBECEE; /* Cor de fundo clara */
+    --branco: #FFFFFF;
+    --laranja: #EB9B00; /* Cor de destaque laranja */
+    --azul-degrade: linear-gradient(97.54deg, #002f52 35.49%, #326589 165.37%); /* Degradê azul */
+    --fonte-principal: "Poppins", sans-serif; /* Fonte principal */
+    --azul: #002F52; /* Azul escuro */
+    --cinza-claro: #F4F4F4; /* Cinza claro */
+    --cinza-escuro: #666666; /* Cinza escuro para textos */
+    --cor-primaria: #003366; /* Azul escuro para elementos principais */
+    --cor-secundaria: #326589; /* Azul secundário */
+    --cor-acento: #EB9B00; /* Laranja para destaques */
+}
+
+/* Reset básico para garantir consistência em todos os navegadores */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    background-color: var(--cor-de-fundo);
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--cinza-escuro);
+    line-height: 1.5;
+}
+
+/* Definir o layout para os elementos de cabeçalho e conteúdo */
+header {
+    background: var(--azul-degrade);
+    padding: 1rem;
+    color: var(--branco);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header .lista-menu {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    font-size: 1rem;
+}
+
+header .lista-menu__item a {
+    color: var(--branco);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header .lista-menu__item a:hover {
+    color: var(--laranja);
+}
+
+/* Estilo do banner */
+.banner {
+    background-color: var(--cor-primaria);
+    color: var(--branco);
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.banner__titulo {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.banner__texto {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.banner__pesquisa {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: 2px solid var(--cor-secundaria);
+    width: 70%;
+    max-width: 400px;
+    transition: all 0.3s ease;
+}
+
+.banner__pesquisa:focus {
+    outline: none;
+    border-color: var(--laranja);
+}
+
+/* Estilo do carrossel */
+.carrossel {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.carrossel__titulo {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--azul);
+    margin-bottom: 1.5rem;
+}
+
+.swiper {
+    margin-top: 1.5rem;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: var(--laranja);
+}
+
+/* Cartões de produtos */
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: var(--branco);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card__descrição {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card__descrição img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card__botões {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.card__botões .botões {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.card_botões .botões_item {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.botões__ancora {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+}
+
+.botões__ancora:hover {
+    color: var(--laranja);
+}
+
+/* Tópicos visitados */
+.tópicos {
+    padding: 2rem 1rem;
+    background-color: var(--cinza-claro);
+    text-align: center;
+}
+
+.tópicos__titulo {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--azul);
+    margin-bottom: 1rem;
+}
+
+.tópicos__lista {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.tópicos__item a {
+    font-size: 1.1rem;
+    color: var(--azul);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.tópicos__item a:hover {
+    color: var(--laranja);
+}
+
+/* Estilo do contato */
+.contato {
+    background-color: var(--azul-degrade);
+    color: var(--branco);
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.contato__titulo {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.contato__texto {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.contato__email {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: 2px solid var(--laranja);
+    width: 70%;
+    max-width: 400px;
+    transition: border-color 0.3s ease;
+}
+
+.contato__email:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+}
+
+/* Rodapé */
+footer.rodapé {
+    background-color: var(--cor-primaria);
+    color: var(--branco);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer.rodapé__titulo {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner__pesquisa {
+        width: 90%;
+    }
+
+    .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .tópicos__lista {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner__titulo {
+        font-size: 2rem;
+    }
+
+    .banner__texto {
+        font-size: 1rem;
+    }
+
+    .card__descrição img {
+        width: 80px;
+    }
+
+    .tópicos__lista {
+        gap: 0.5rem;
